@@ -23,8 +23,13 @@ gem 'webpacker', '~> 5.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
+  gem 'rspec-rails', '~> 5.0', '>= 5.0.2'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # Allow us to create fake models for testing
+  gem 'factory_bot_rails', '~> 6.2'
 end
 
 group :development do
