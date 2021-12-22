@@ -52,7 +52,6 @@ RSpec.describe FactorDiscount do
         factor_rule.min_products_number = nil
         factor_rule.max_products_number = nil
 
-        byebug
         expect(factor_rule.valid?).to eq(false)
         expect(factor_rule.errors.messages).to eq(
           { min_products_number: ["can't be nil if max_products_number also is nil"] }
