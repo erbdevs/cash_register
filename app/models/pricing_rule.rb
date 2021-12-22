@@ -1,4 +1,6 @@
 class PricingRule < ApplicationRecord
+  self.abstract_class = true
+
   belongs_to :product
 
   validates :name, :enabled, presence: true
