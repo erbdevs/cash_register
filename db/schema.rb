@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_22_181634) do
+ActiveRecord::Schema.define(version: 2021_12_22_183034) do
 
   create_table "factor_discounts", force: :cascade do |t|
     t.integer "product_id", null: false
@@ -43,6 +43,19 @@ ActiveRecord::Schema.define(version: 2021_12_22_181634) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "unitary_price_discounts", force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.string "name"
+    t.integer "min_products_number"
+    t.integer "max_products_number"
+    t.boolean "enabled"
+    t.decimal "value", precision: 10, scale: 2
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_unitary_price_discounts_on_product_id"
+  end
+
   add_foreign_key "factor_discounts", "products"
   add_foreign_key "pricing_rules", "products"
+  add_foreign_key "unitary_price_discounts", "products"
 end
