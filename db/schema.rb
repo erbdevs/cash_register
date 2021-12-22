@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_22_210839) do
+ActiveRecord::Schema.define(version: 2021_12_22_214121) do
+
+  create_table "basket_items", force: :cascade do |t|
+    t.integer "basket_id", null: false
+    t.integer "product_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["basket_id"], name: "index_basket_items_on_basket_id"
+    t.index ["product_id"], name: "index_basket_items_on_product_id"
+  end
 
   create_table "baskets", force: :cascade do |t|
     t.string "client"
@@ -62,6 +72,8 @@ ActiveRecord::Schema.define(version: 2021_12_22_210839) do
     t.index ["product_id"], name: "index_unitary_price_discounts_on_product_id"
   end
 
+  add_foreign_key "basket_items", "baskets"
+  add_foreign_key "basket_items", "products"
   add_foreign_key "factor_discounts", "products"
   add_foreign_key "pricing_rules", "products"
   add_foreign_key "unitary_price_discounts", "products"
