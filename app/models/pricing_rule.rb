@@ -1,19 +1,12 @@
 class PricingRule < ApplicationRecord
+  self.abstract_class = true
+
   belongs_to :product
 
-  validates :name, :enabled, presence: true
+  validates :name, presence: true
+  validates :enabled, inclusion:{ in: [true, false] }
 
-  validate :valid_type_of_discount?, :valid_range_of_products_number?
-
-  def valid_type_of_discount?
-    if unitary_absolute_price.present? && unitary_factor_price.present?
-      errors.add('only one can be defined')
-    elsif unitary_absolute_price.nil? && unitary_factor_price.nil?
-      errors.add('One of them must be defined')
-    end
-
-    true
-  end
+  validate :valid_range_of_products_number?
 
   def valid_range_of_products_number?
     if max_products_number.nil? && min_products_number.nil?
