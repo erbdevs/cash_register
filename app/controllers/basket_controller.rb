@@ -1,7 +1,5 @@
 class BasketController < ApplicationController
-  def new
-  end
-
-  def create
+  def show
+    @basket_items = current_basket.basket_items
   end
 end
