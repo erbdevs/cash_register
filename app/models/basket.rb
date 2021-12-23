@@ -4,4 +4,19 @@ class Basket < ApplicationRecord
   validates :client, presence: true
   validates :state,
             inclusion: { in: STATES }
+
+  has_many :basket_items, dependent: :destroy
+
+  before_save :set_subtotal
+
+  def set_subtotal
+    order_items.sum do |item|
+      item.unit_price * item.quantity
+    end
+  end
+private
+
+  def set_subtotal
+    self[:subtotal] = subtotal
+  end
 end
