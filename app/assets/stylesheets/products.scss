@@ -1,0 +1,14 @@
+.products-container {
+  width: 60%;
+  margin: 0 auto;
+
+  .card {
+    .card-body {
+      border: 1px #f5d39f solid;
+    }
+
+    img.card-img-top {
+      height: 350px;
+    }
+  }
+}
