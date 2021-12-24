@@ -3,19 +3,21 @@ class BasketItemsController < ApplicationController
 
   def create
     @basket_item = @basket.basket_items.new(basket_item_params)
-    @basket.save
+    @basket.state = "created"
+    @basket.client = "Obi Wan"
+    @basket.save!
     session[:basket_id] = @basket.id
   end
 
   def update
-    @basket_item = @basket.basket_items.find(basket_item_params[:id])
-    @basket_item.update_attributes(basket_item_params)
+    @basket_item = @basket.basket_items.find(params[:id])
+    @basket_item.update_attribute(:quantity, basket_item_params[:quantity])
     @basket_items = current_basket.basket_items
   end
 
   def destroy
-    @basket_item = @basket.basket_items.find(basket_item_params[:id])
-    @basket_item.destroy
+    @basket_item = @basket.basket_items.find(params[:id])
+    @basket_item.destroy!
     @basket_items = current_basket.basket_items
   end
 
