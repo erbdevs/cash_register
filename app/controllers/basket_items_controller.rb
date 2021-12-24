@@ -10,19 +10,19 @@ class BasketItemsController < ApplicationController
   def update
     @basket_item = @basket.basket_items.find(basket_item_params[:id])
     @basket_item.update_attributes(basket_item_params)
-    @basket_items = @basket.basket_items
+    @basket_items = current_basket.basket_items
   end
 
   def destroy
     @basket_item = @basket.basket_items.find(basket_item_params[:id])
     @basket_item.destroy
-    @basket_items = @basket.basket_items
+    @basket_items = current_basket.basket_items
   end
 
 private
 
   def basket_item_params
-    params.require(:basket_item).permit(:id, :product_id, :quantity)
+    params.require(:basket_item).permit(:product_id, :quantity)
   end
 
   def set_basket

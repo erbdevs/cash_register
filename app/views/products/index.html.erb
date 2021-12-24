@@ -2,7 +2,7 @@
 
 <div class="products-container">
   <div class="row row-cols-1 row-cols-sm-3 g-3">
-    <% @available_products.each do |product| %>
+    <% @products.each do |product| %>
       <div class="col">
         <div class="card">
           <img src=<%= "/assets/products/#{product.code.downcase}.jpeg" %> class="card-img-top" alt="card-grid-image">

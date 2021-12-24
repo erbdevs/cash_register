@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'products', to: 'products#index'
 
-  get 'basket', to: 'baskets#show'
+  get 'basket', to: 'basket#show'
 
   resources :basket_items
 end

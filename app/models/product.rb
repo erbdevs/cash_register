@@ -6,5 +6,5 @@ class Product < ApplicationRecord
             length: { minimum: 3 },
             format: { with: /[A-Z]{2}\d{1}/, message: 'Invalid format for code' }
 
-  has_many :order_items
+  has_many :basket_items
 end

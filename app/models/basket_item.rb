@@ -1,6 +1,6 @@
 class BasketItem < ApplicationRecord
-  belongs_to :basket
   belongs_to :product
+  belongs_to :basket
 
   before_save :set_unit_price
   before_save :set_total_price
