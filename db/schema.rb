@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_22_214121) do
+ActiveRecord::Schema.define(version: 2021_12_24_120237) do
 
   create_table "basket_items", force: :cascade do |t|
     t.integer "basket_id", null: false
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2021_12_22_214121) do
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "unit_price", precision: 8, scale: 2
+    t.decimal "total_price", precision: 8, scale: 2
     t.index ["basket_id"], name: "index_basket_items_on_basket_id"
     t.index ["product_id"], name: "index_basket_items_on_product_id"
   end
@@ -27,6 +29,8 @@ ActiveRecord::Schema.define(version: 2021_12_22_214121) do
     t.string "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "subtotal", precision: 8, scale: 2
+    t.decimal "total", precision: 8, scale: 2
   end
 
   create_table "factor_discounts", force: :cascade do |t|
