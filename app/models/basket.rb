@@ -9,8 +9,8 @@ class Basket < ApplicationRecord
 
   before_save :set_subtotal
 
-  def set_subtotal
-    order_items.sum do |item|
+  def subtotal
+    basket_items.sum do |item|
       item.unit_price * item.quantity
     end
   end

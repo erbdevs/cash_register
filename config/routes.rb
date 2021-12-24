@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   root to: 'welcome#index'
 
-  get 'products/index'
+  get 'products', to: 'products#index'
 
-  get 'basket/show'
+  get 'basket', to: 'baskets#show'
 
-  get 'basket_items/create'
-  get 'basket_items/update'
-  get 'basket_items/destroy'
+  resources :basket_items
 end
