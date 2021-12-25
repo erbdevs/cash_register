@@ -1,1 +1,9 @@
-<%= link_to "#{current_basket.basket_items.size} items with a value of #{current_basket.subtotal}€", basket_path %>
+<div id="basket">
+	<div id="basket-items">
+    <% @basket_items.each do |basket_item| %>
+      <%= render partial: 'basket/basket_item', object: basket_item %>
+    <% end %>
+  </div>
+  <hr>
+  <h3> Your current basket price is <%= current_basket.subtotal %> €</h3>
+</div>
