@@ -6,6 +6,7 @@ class BasketItemsController < ApplicationController
     @basket.state = "created"
     @basket.client = "Obi Wan"
     @basket.save!
+    @basket_items = @basket.basket_items
     session[:basket_id] = @basket.id
   end
 
