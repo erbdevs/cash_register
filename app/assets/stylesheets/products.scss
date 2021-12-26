@@ -3,8 +3,37 @@
   margin: 0 auto;
 
   .card {
+    border: 3px $broken-white solid;
+
     .card-body {
-      border: 1px #f5d39f solid;
+      background-color: $broken-white;
+
+      .product-card-title {
+        font-weight: bolder;
+        margin-bottom: 0.5rem;
+
+        .product-card-name {
+          font-size: 1.2em
+        }
+
+        .product-card-price {
+          text-align: right;
+        }
+      }
+
+      .add-to-basket-group {
+        .add-to-basket-button {
+          background: black;
+          border: 1px black solid;
+          border-radius: 2px;
+          color: $broken-white;
+          font-size: 1.5em;
+
+          &:hover {
+            color:#f8c06b
+          }
+        }
+      }
     }
 
     img.card-img-top {
