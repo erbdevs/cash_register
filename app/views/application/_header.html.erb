@@ -10,16 +10,13 @@
           <a class="nav-link active" aria-current="page" href=<%= root_path %>>Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Products</a>
+          <a class="nav-link" href=<%= products_path %> >Products</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Not so healthy products</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">Search</button>
-      </form>
+      <a class="d-flex btn btn-outline-light" href=<%= basket_path %>><i class="bi bi-cart4"></i> Go cart</a>
     </div>
   </div>
 </nav>

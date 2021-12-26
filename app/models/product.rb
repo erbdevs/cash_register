@@ -5,4 +5,6 @@ class Product < ApplicationRecord
   validates :code,
             length: { minimum: 3 },
             format: { with: /[A-Z]{2}\d{1}/, message: 'Invalid format for code' }
+
+  has_many :basket_items
 end

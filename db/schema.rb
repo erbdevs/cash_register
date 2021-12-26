@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_22_183034) do
+ActiveRecord::Schema.define(version: 2021_12_24_120237) do
+
+  create_table "basket_items", force: :cascade do |t|
+    t.integer "basket_id", null: false
+    t.integer "product_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.decimal "unit_price", precision: 8, scale: 2
+    t.decimal "total_price", precision: 8, scale: 2
+    t.index ["basket_id"], name: "index_basket_items_on_basket_id"
+    t.index ["product_id"], name: "index_basket_items_on_product_id"
+  end
+
+  create_table "baskets", force: :cascade do |t|
+    t.string "client"
+    t.string "state"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.decimal "subtotal", precision: 8, scale: 2
+    t.decimal "total", precision: 8, scale: 2
+  end
 
   create_table "factor_discounts", force: :cascade do |t|
     t.integer "product_id", null: false
@@ -55,6 +76,8 @@ ActiveRecord::Schema.define(version: 2021_12_22_183034) do
     t.index ["product_id"], name: "index_unitary_price_discounts_on_product_id"
   end
 
+  add_foreign_key "basket_items", "baskets"
+  add_foreign_key "basket_items", "products"
   add_foreign_key "factor_discounts", "products"
   add_foreign_key "pricing_rules", "products"
   add_foreign_key "unitary_price_discounts", "products"

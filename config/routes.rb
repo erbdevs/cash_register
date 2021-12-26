@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
   root to: 'welcome#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get 'products', to: 'products#index'
+
+  get 'basket', to: 'basket#show'
+
+  resources :basket_items
 end
