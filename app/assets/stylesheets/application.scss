@@ -11,9 +11,13 @@
  * It is generally better to create a new file per style scope.
  */
 
- @import 'bootstrap/scss/bootstrap';
- @import 'variables';
- @import 'alerts';
- @import 'header';
- @import 'welcome';
- @import 'products';
+@import 'bootstrap/scss/bootstrap';
+@import 'variables';
+@import 'alerts';
+@import 'header';
+@import 'welcome';
+@import 'products';
+
+body {
+  background-color: $base-grey;
+}

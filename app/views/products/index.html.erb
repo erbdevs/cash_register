@@ -17,8 +17,9 @@
             <%= form_with model: @basket_item, local: false do |f| %>
               <%= f.hidden_field :product_id, value: product.id %>
               <div class="add-to-basket-group row row-cols-1">
-                <%= f.number_field :quantity, class:"add-to-basket-quantity col-9", value: 1, min: 1 %>
-                <%= button_tag(class:"add-to-basket-button offset-md-1 col-2") do %>
+                <%= f.number_field :quantity, class:"add-to-basket-quantity col-5", value: 1, min: 1 %>
+                <%= button_tag(class:"add-to-basket-button offset-md-1 col-5") do %>
+                  Add
                   <i class="bi bi-cart-plus-fill"></i>
                 <% end %>
               </div>

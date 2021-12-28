@@ -3,12 +3,11 @@
   margin: 0 auto;
 
   .card {
-    border: 3px $broken-white solid;
+    border: 1px $base-green solid;
 
     .card-body {
-      background-color: $broken-white;
-
       .product-card-title {
+        color: $base-green;
         font-weight: bolder;
         margin-bottom: 0.5rem;
 
@@ -22,22 +21,30 @@
       }
 
       .add-to-basket-group {
+        padding: 0 10px;
+
+        .add-to-basket-quantity{
+          text-align: center;
+        }
+
         .add-to-basket-button {
-          background: black;
-          border: 1px black solid;
+          border: 1px $base-green solid;
           border-radius: 2px;
-          color: $broken-white;
-          font-size: 1.5em;
+          color: $base-green;
+
+          i {
+            font-size: 1.5em;
+          }
 
           &:hover {
-            color:#f8c06b
+            color: $green-l-1;
           }
         }
       }
     }
 
-    img.card-img-top {
-      height: 350px;
+    &:hover {
+      box-shadow: 5px 10px 18px #888888;
     }
   }
 }
