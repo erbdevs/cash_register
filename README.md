@@ -21,12 +21,12 @@ This is only a prototype, so there are still many things to improve, some ToDo t
 - Nav Bar
   - Adding some kind of feedback in the Cart icon when some products are added in the "Products" section
 - Products
-  - Bit of re-styling
   - Problem with word-wraping at some resolutions
 - Basket
   - Add icons for BasketItem actions in the products table
 - Alerts
   - Publish them in the top of the view instead of in the top of the page
+  - Cart or bar cannot be clicked when alert is prsent.
 ### Features
 - Integrate PricingRules with the Basket logic
 - Responsive for everything
