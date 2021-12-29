@@ -1,5 +1,12 @@
 .navbar {
-  a {
+  background-color: $base-green;
+
+  .btn-outline-light {
+    &:hover {
+      color: #000;
+      background-color: $green-l-1;
+    }
+
     i{
       font-size: 45px;
     }

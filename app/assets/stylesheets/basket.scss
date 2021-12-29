@@ -1,0 +1,25 @@
+// Place all the styles related to the BasketItems controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#basket-items{
+  .table{
+    input {
+      width: 60px;
+    }
+
+    td {
+      vertical-align: middle;
+      text-align: center;
+
+      &.name {
+        text-align: left;
+
+        img {
+          border-radius: 15px;
+          width: 100px
+        }
+      }
+    }
+  }
+}

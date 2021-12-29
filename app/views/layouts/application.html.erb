@@ -12,7 +12,12 @@
   </head>
 
   <body>
-    <%= render 'header' %>
-    <%= yield %>
+    <%= render 'alerts' %>
+    <header>
+      <%= render 'header' %>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>

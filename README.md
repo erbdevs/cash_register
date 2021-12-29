@@ -24,9 +24,10 @@ This is only a prototype, so there are still many things to improve, some ToDo t
   - Adding unitary price in product cards
   - Bit of re-styling
 - Basket
-  - Totally re-style the view, it has 0 style
+  - Add icons for BasketItem actions in the products table
 ### Features
 - Integrate PricingRules with the Basket logic
+- Responsive for everything
 ### CI
 - Create automatic GitHub tasks to run CI on each push
 - Create automatic GitHub tasks for Code Quality checks (Rubocop)
