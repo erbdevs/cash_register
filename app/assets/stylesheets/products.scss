@@ -1,6 +1,7 @@
 .products-container {
   width: 60%;
   margin: 0 auto;
+  cursor: default;
 
   .card {
     border: 1px $base-green solid;

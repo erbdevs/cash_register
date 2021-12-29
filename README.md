@@ -21,13 +21,16 @@ This is only a prototype, so there are still many things to improve, some ToDo t
 - Nav Bar
   - Adding some kind of feedback in the Cart icon when some products are added in the "Products" section
 - Products
-  - Adding unitary price in product cards
   - Bit of re-styling
+  - Problem with word-wraping at some resolutions
 - Basket
   - Add icons for BasketItem actions in the products table
+- Alerts
+  - Publish them in the top of the view instead of in the top of the page
 ### Features
 - Integrate PricingRules with the Basket logic
 - Responsive for everything
+- Fix problem that causes that new products added from ProductsIndex create a new BasketItem instad of adding quantity to the existing one if they're the same
 ### CI
 - Create automatic GitHub tasks to run CI on each push
 - Create automatic GitHub tasks for Code Quality checks (Rubocop)
