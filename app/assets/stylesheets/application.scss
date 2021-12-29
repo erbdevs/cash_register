@@ -17,7 +17,18 @@
 @import 'header';
 @import 'welcome';
 @import 'products';
+@import 'basket';
 
 body {
   background-color: $base-grey;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
 }

@@ -1,12 +1,17 @@
-<div>
-  <h3><%= basket_item.product.name %></h3>
-  <h3><%= basket_item.product.price %></h3>
-  <%= form_with model: basket_item, local: false do |f| %>
-    <%= f.hidden_field :id, value: basket_item.id %>
-    <%= f.hidden_field :product_id, value: basket_item.product.id %>
-    <%= f.number_field :quantity, value: basket_item.quantity.to_i, min: 1 %>
-    <%= f.submit "Update Basket" %>
-    <%= link_to "Remove Items", basket_item, method: :delete, remote: true %>
-  <% end %>
-  <h2>Subtotal: <%= basket_item.total_price.to_s %> €</h2>
-</div>
+  <tr>
+    <td class="name">
+      <img src=<%= "/assets/products/#{basket_item.product.code.downcase}.jpeg" %>>
+      <%= basket_item.product.name %>
+    </td>
+    <td><%= basket_item.product.price %> €</td>
+    <%= form_with model: basket_item, local: false do |f| %>
+      <%= f.hidden_field :id, value: basket_item.id %>
+      <%= f.hidden_field :product_id, value: basket_item.product.id %>
+      <td><%= f.number_field :quantity, value: basket_item.quantity.to_i, min: 1 %> </td>
+      <td><%= basket_item.total_price %> €</td>
+      <td>
+        <%= f.submit "Update Basket" %>
+        <%= link_to "Remove Items", basket_item, method: :delete, remote: true %>
+      </td>
+    <% end %>
+</tr>

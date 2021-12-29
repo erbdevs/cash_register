@@ -1,9 +1,31 @@
-<div id="basket">
-	<div id="basket-items">
-    <% @basket_items.each do |basket_item| %>
-      <%= render partial: 'basket/basket_item', object: basket_item %>
-    <% end %>
+<div id="basket" class="row">
+	<div id="basket-items" class="col-8">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col">Unit Price</th>
+          <th scope="col">Units</th>
+          <th scope="col">Subtotal</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @basket_items.each do |basket_item| %>
+          <%= render partial: 'basket/basket_item', object: basket_item %>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-  <hr>
-  <h3> Your current basket price is <%= current_basket.subtotal %> €</h3>
+  <div id="total-price" class="col-4">
+    <h3> There are <%= current_basket.basket_items.sum(&:quantity) %> articles in your basket</h3>
+    <div class="row">
+      <div class="col-8">
+        TOTAL:
+      </div>
+      <div class="col-4 text-end">
+        <%= current_basket.subtotal %> €
+      </div>
+    </div>
+  </div>
 </div>
