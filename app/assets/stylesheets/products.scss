@@ -29,16 +29,17 @@
         }
 
         .add-to-basket-button {
+          background-color: $base-green;
           border: 1px $base-green solid;
           border-radius: 2px;
-          color: $base-green;
+          color: white;
 
           i {
             font-size: 1.5em;
           }
 
           &:hover {
-            color: $green-l-1;
+            background: $green-l-1;
           }
         }
       }
