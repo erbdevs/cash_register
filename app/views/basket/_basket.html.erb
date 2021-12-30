@@ -3,14 +3,6 @@
     <%= render "basket/basket_items" %>
   </div>
   <div id="total-price" class="col-4">
-    <h3> There are <%= current_basket.basket_items.sum(&:quantity) %> articles in your basket</h3>
-    <div class="row">
-      <div class="col-8">
-        TOTAL:
-      </div>
-      <div class="col-4 text-end">
-        <%= current_basket.subtotal %> €
-      </div>
-    </div>
+    <%= render "basket/total_price" %>
   </div>
 </div>
