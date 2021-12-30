@@ -3,11 +3,6 @@ class BasketItemsController < ApplicationController
 
   def create
     @basket_item = create_basket_item
-    unless @basket.persisted?
-      @basket.state = "created"
-      @basket.client = "Obi Wan"
-    end
-
     @basket.save!
     @basket_items = @basket.basket_items
     session[:basket_id] = @basket.id

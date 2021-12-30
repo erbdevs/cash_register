@@ -3,6 +3,6 @@ module ApplicationHelper
     session_basket = Basket.find_by_id(session[:basket_id])
     return session_basket if session_basket
 
-    Basket.new
+    Basket.create(client: "Obi wan", state: "created")
   end
 end
