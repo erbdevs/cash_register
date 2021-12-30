@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Product</th>
+      <th scope="col">Unit Price</th>
+      <th scope="col">Units</th>
+      <th scope="col">Subtotal</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @basket_items.each do |basket_item| %>
+      <%= render partial: 'basket/basket_item', object: basket_item %>
+    <% end %>
+  </tbody>
+</table>

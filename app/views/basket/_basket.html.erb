@@ -1,21 +1,6 @@
 <div id="basket" class="row">
-	<div id="basket-items" class="col-8">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Product</th>
-          <th scope="col">Unit Price</th>
-          <th scope="col">Units</th>
-          <th scope="col">Subtotal</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @basket_items.each do |basket_item| %>
-          <%= render partial: 'basket/basket_item', object: basket_item %>
-        <% end %>
-      </tbody>
-    </table>
+  <div id="basket-items" class="col-8">
+    <%= render "basket/basket_items" %>
   </div>
   <div id="total-price" class="col-4">
     <h3> There are <%= current_basket.basket_items.sum(&:quantity) %> articles in your basket</h3>
