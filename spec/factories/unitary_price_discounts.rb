@@ -5,6 +5,6 @@ FactoryBot.define do
     min_products_number { 3 }
     max_products_number { nil }
     enabled { false }
-    value { "1.00" }
+    value { 1.0 }
   end
 end

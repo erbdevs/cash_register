@@ -7,4 +7,9 @@ class Product < ApplicationRecord
             format: { with: /[A-Z]{2}\d{1}/, message: 'Invalid format for code' }
 
   has_many :basket_items
+
+  def pricing_rules
+    FactorDiscount.where(product: self, enabled: true) +
+      UnitaryPriceDiscount.where(product: self, enabled: true)
+  end
 end
