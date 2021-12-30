@@ -12,12 +12,14 @@ class BasketItemsController < ApplicationController
     @basket_item = @basket.basket_items.find(params[:id])
     @basket_item.update_attribute(:quantity, basket_item_params[:quantity])
     @basket_items = current_basket.basket_items
+    @basket.save!
   end
 
   def destroy
     @basket_item = @basket.basket_items.find(params[:id])
     @basket_item.destroy!
     @basket_items = current_basket.basket_items
+    @basket.save!
   end
 
 private
