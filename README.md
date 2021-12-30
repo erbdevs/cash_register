@@ -24,13 +24,14 @@ This is only a prototype, so there are still many things to improve, some ToDo t
   - Problem with word-wraping at some resolutions
 - Basket
   - Add icons for BasketItem actions in the products table
+  - Show what offers are being applied in case they are applied.
+  - Fix bug, once we upload one product's quantity, we cannot update it again.
 - Alerts
   - Publish them in the top of the view instead of in the top of the page
   - Cart or bar cannot be clicked when alert is prsent.
 ### Features
-- Integrate PricingRules with the Basket logic
+- PricingRule buy-one-get-one-for-free is not exactly what was required.
 - Responsive for everything
-- Fix problem that causes that new products added from ProductsIndex create a new BasketItem instad of adding quantity to the existing one if they're the same
 ### CI
 - Create automatic GitHub tasks to run CI on each push
 - Create automatic GitHub tasks for Code Quality checks (Rubocop)
