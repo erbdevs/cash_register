@@ -13,17 +13,13 @@ class BasketItem < ApplicationRecord
     end
   end
 
-  def total_price
-    return unit_price * quantity
-  end
-
 private
 
   def set_unit_price
-    self[:unit_price] = unit_price
+    self[:unit_price] = BasketItemPriceCalculator.new(self).run
   end
 
   def set_total_price
-    self[:total_price] = total_price * quantity
+    self[:total_price] = self.unit_price * quantity
   end
 end

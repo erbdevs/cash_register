@@ -3,11 +3,6 @@ class BasketItemsController < ApplicationController
 
   def create
     @basket_item = create_basket_item
-    unless @basket.persisted?
-      @basket.state = "created"
-      @basket.client = "Obi Wan"
-    end
-
     @basket.save!
     @basket_items = @basket.basket_items
     session[:basket_id] = @basket.id
@@ -17,12 +12,14 @@ class BasketItemsController < ApplicationController
     @basket_item = @basket.basket_items.find(params[:id])
     @basket_item.update_attribute(:quantity, basket_item_params[:quantity])
     @basket_items = current_basket.basket_items
+    @basket.save!
   end
 
   def destroy
     @basket_item = @basket.basket_items.find(params[:id])
     @basket_item.destroy!
     @basket_items = current_basket.basket_items
+    @basket.save!
   end
 
 private
