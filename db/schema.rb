@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2021_12_30_030641) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "basket_items", force: :cascade do |t|
-    t.integer "basket_id", null: false
-    t.integer "product_id", null: false
+    t.bigint "basket_id", null: false
+    t.bigint "product_id", null: false
     t.integer "quantity", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -25,8 +28,8 @@ ActiveRecord::Schema.define(version: 2021_12_30_030641) do
   end
 
   create_table "baskets", force: :cascade do |t|
-    t.string "client"
-    t.string "state"
+    t.text "client"
+    t.text "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.decimal "subtotal", precision: 8, scale: 2
@@ -34,8 +37,8 @@ ActiveRecord::Schema.define(version: 2021_12_30_030641) do
   end
 
   create_table "factor_discounts", force: :cascade do |t|
-    t.integer "product_id", null: false
-    t.string "name"
+    t.bigint "product_id", null: false
+    t.text "name"
     t.integer "min_products_number"
     t.integer "max_products_number"
     t.boolean "enabled", default: false
@@ -46,8 +49,8 @@ ActiveRecord::Schema.define(version: 2021_12_30_030641) do
   end
 
   create_table "pricing_rules", force: :cascade do |t|
-    t.integer "product_id", null: false
-    t.string "name"
+    t.bigint "product_id", null: false
+    t.text "name"
     t.integer "min_products_number"
     t.integer "max_products_number"
     t.boolean "enabled", default: false
@@ -57,16 +60,16 @@ ActiveRecord::Schema.define(version: 2021_12_30_030641) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "code"
-    t.string "name"
+    t.text "code"
+    t.text "name"
     t.decimal "price", precision: 8, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "unitary_price_discounts", force: :cascade do |t|
-    t.integer "product_id", null: false
-    t.string "name"
+    t.bigint "product_id", null: false
+    t.text "name"
     t.integer "min_products_number"
     t.integer "max_products_number"
     t.boolean "enabled"
